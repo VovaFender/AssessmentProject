@@ -1,0 +1,19 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using APro.WebAPI.Core.Configuration;
+
+namespace ConsoleApplication
+{
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            WebApiConfig.ConfigureServices(services);
+        }
+        
+        public void Configure(IApplicationBuilder app)
+        {
+            WebApiConfig.Configure(app);
+        }
+    }
+}

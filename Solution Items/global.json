@@ -1,0 +1,5 @@
+{
+    "projects":[
+        "APro.WebAPI.Core", "APro.WebAPI.Host"
+    ]
+}
