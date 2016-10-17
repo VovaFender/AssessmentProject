@@ -1,4 +1,4 @@
 #exclude the following:
 
-/bin
-/obj
+bin/*
+obj/*
