@@ -9,4 +9,12 @@ public class AssessmentDataContext : DbContext
     }
 
     public DbSet<Question> Questions { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<Question>().HasKey(q => q.QuestionID);
+        
+        base.OnModelCreating(builder);
+    }
+
 }
