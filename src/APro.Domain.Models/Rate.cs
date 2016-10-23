@@ -1,6 +1,9 @@
-public enum Rate
+namespace APro.Domain.Models
 {
-    Easy,
-    Medium,
-    High
+    public enum Rate
+    {
+        Easy,
+        Medium,
+        High
+    }
 }

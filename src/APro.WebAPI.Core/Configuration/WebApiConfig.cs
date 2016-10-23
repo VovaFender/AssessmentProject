@@ -8,7 +8,8 @@ namespace APro.WebAPI.Core.Configuration
     {
         public static void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();            
+            services.AddMvc();
+            DependenciesConfig.ConfigureDependencies(services);            
         }
 
         public static void Configure(IApplicationBuilder app)
@@ -17,11 +18,11 @@ namespace APro.WebAPI.Core.Configuration
         }
 
         private static void ConfigureRoutes(IRouteBuilder routes)
-        {
-            routes.MapRoute(
-                name: "default",
-                template: "api/{controller}/{action}/{id?}"
-            );
+        {    
+            // routes.MapRoute(
+            //     name: "default",
+            //     template: "api/{controller}/{action?}/{id?}"
+            // );
         }
     }
 }

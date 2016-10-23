@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 
-public class Question
+namespace APro.Domain.Models
 {
-    public int QuestionID { get; set; }
+    public class Question
+    {
+        public int ID { get; set; }
 
-    public string Description { get; set; }
+        public string Description { get; set; }
 
-    // public Rate Rate { get; set; }
-
-    // public IList<Tag> Tags { get; set; }
+        // public IList<Tag> Tags { get; set; }
+    }
 }

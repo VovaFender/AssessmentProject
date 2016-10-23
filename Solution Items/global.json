@@ -1,5 +1,8 @@
 {
     "projects":[
-        "APro.WebAPI.Core", "APro.WebAPI.Host"
+        "APro.WebAPI.Core", 
+        "APro.WebAPI.Host",
+        "APro.Domain.Data",
+        "APro.Domain.Models"
     ]
 }
