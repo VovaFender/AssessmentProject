@@ -11,14 +11,54 @@ namespace APro.Domain.Data
         }
 
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Test> Tests { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             BuildQuestion(builder);
-
+            BuildTest(builder);
+            
             base.OnModelCreating(builder);
         }
 
+        //TODO: move to EntityConfiguration and mappings
+        private void BuildTest(ModelBuilder builder)
+        {
+            var testQuestion = builder.Entity<TestQuestion>();
+            testQuestion.ToTable("test_question");
+            testQuestion.HasKey(tq => tq.ID);
+            testQuestion.Property(tq => tq.ID).HasColumnName("id");
+            testQuestion.Property(tq => tq.QuestionID).HasColumnName("question_id");
+            testQuestion.Property(tq => tq.TestID).HasColumnName("test_id");
+
+            testQuestion
+                .HasOne(tq => tq.Question)
+                .WithMany(q => q.TestQuestions)
+                .HasForeignKey(tq => tq.QuestionID);
+
+            testQuestion
+                .HasOne(tq => tq.Test)
+                .WithMany(t => t.TestQuestions)
+                .HasForeignKey(tq => tq.TestID);
+
+            builder.Entity<Question>().HasMany(q => q.TestQuestions)
+                .WithOne(tq => tq.Question)
+                .HasForeignKey(tq => tq.QuestionID);
+
+            var test = builder.Entity<Test>();
+            test.ToTable("test");
+            test.HasKey(t => t.ID);
+            test.Property(t => t.ID).HasColumnName("id");
+            test.Property(t => t.Title).HasColumnName("title");
+            test.Property(t => t.Description).HasColumnName("description");
+
+            test
+                .HasMany(t => t.TestQuestions)
+                .WithOne(tq => tq.Test)
+                .HasForeignKey(tq => tq.TestID);
+        }
+
+        //TODO: move to EntityConfiguration and mappings
         private void BuildQuestion(ModelBuilder builder)
         {
             var possibleAnswer = builder.Entity<PossibleAnswer>();

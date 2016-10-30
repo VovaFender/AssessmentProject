@@ -18,7 +18,8 @@ namespace APro.Domain.Data.Models
         }
         
         public string RateDatabase { get; set; }
-        public virtual ICollection<QuestionTag> QuestionTags { get; set; }
-        public virtual ICollection<PossibleAnswer> PossibleAnswers { get; set; }
+        public IList<QuestionTag> QuestionTags { get; set; }
+        public IList<PossibleAnswer> PossibleAnswers { get; set; }
+        public IList<TestQuestion> TestQuestions { get; set; }
     }
 }

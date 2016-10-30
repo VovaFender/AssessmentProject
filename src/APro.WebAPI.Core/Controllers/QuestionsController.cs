@@ -19,23 +19,17 @@ namespace APro.WebAPI.Core.Controllers
         public IActionResult Get()
         {
             var questionsList = _dbContext.Questions.Select(q => 
-            new 
-            {
-                q.ID,
-                q.Description,
-                q.Rate,
-                Tags = q.QuestionTags.Select(qt => new { qt.Tag.ID, qt.Tag.Title }).ToList(),
-                PossibleAnswers = q.PossibleAnswers.Select(pa => new { pa.ID, pa.Description, pa.IsCorrect }).ToList()
-            });
+                new 
+                {
+                    q.ID,
+                    q.Description,
+                    q.Rate,
+                    Tags = q.QuestionTags.Select(qt => new { qt.Tag.ID, qt.Tag.Title }).ToList(),
+                    PossibleAnswers = q.PossibleAnswers
+                                        .Select(pa => new { pa.ID, pa.Description, pa.IsCorrect }).ToList()
+                });
             
             return new ObjectResult(questionsList);
         }
-
-        // [HttpGet]
-        // public IActionResult Get(int id)
-        // {
-        //     var question = _dbContext.Questions.FirstOrDefault(q => q.ID == id);
-        //     return new ObjectResult(question);
-        // }
     }
 }
