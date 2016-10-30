@@ -6,7 +6,7 @@
   },
   "dependencies": {
     //Project dependencies
-    "APro.Domain.Models":"*",
+    "APro.Domain.Data.Models":"*",
 
     //External references
     "Npgsql": "3.1.*",

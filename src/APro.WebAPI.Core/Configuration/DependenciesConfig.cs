@@ -11,7 +11,7 @@ namespace APro.WebAPI.Core.Configuration
             services.AddDbContext<AssessmentDataContext>(
                 opts => 
                     opts.UseNpgsql("Host=localhost; Port=5432; Database=AssessmentDB; Username=postgres; Password=admin;"));
-    
+                
             // services.AddScoped<IDataAccessProvider, DataAccessPostgreSqlProvider.DataAccessPostgreSqlProvider>
         }
     }

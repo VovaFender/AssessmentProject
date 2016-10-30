@@ -4,7 +4,8 @@
     "debugType": "portable",
     "emitEntryPoint": false
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {

@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "APro.Domain.Data":"*",
-    "APro.Domain.Models":"*"
+    "APro.Domain.Data.Models":"*"
   },
   "frameworks": {
     "netcoreapp1.0": {

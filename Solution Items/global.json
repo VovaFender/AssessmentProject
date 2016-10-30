@@ -3,6 +3,6 @@
         "APro.WebAPI.Core", 
         "APro.WebAPI.Host",
         "APro.Domain.Data",
-        "APro.Domain.Models"
+        "APro.Domain.Data.Models"
     ]
 }
