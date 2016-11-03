@@ -1,3 +1,4 @@
+using APro.Domain.Data.Configuration;
 using APro.Domain.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,9 +13,14 @@ namespace APro.Domain.Data
 
         public DbSet<Question> Questions { get; set; }
         public DbSet<Test> Tests { get; set; }
+        public DbSet<Examination> Examinations { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            ExaminationConfiguration.Configure(builder);
+            UserConfiguration.Configure(builder);
+
             BuildQuestion(builder);
             BuildTest(builder);
             

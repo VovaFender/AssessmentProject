@@ -16,7 +16,9 @@
           "type": "platform",
           "version": "1.0.0"
         },        
-        "Microsoft.AspNetCore.Mvc":"1.0.0"
+        "Microsoft.AspNetCore.Mvc":"1.0.0",
+        "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0-*",
+        "Microsoft.Extensions.Configuration.Json": "1.0.0-*"
       },
       "imports": "dnxcore50"
     }

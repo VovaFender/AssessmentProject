@@ -3,7 +3,7 @@ using APro.Domain.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace APro.WebAPI.Core
+namespace APro.WebAPI.Core.Controllers
 {
     [Route("api/[controller]")]
     public class TestsController : Controller
