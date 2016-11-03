@@ -20,7 +20,8 @@ namespace APro.Domain.Data
         {
             ExaminationConfiguration.Configure(builder);
             UserConfiguration.Configure(builder);
-
+            RoleConfiguration.Configure(builder);
+            
             BuildQuestion(builder);
             BuildTest(builder);
             

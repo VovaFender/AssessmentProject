@@ -15,6 +15,11 @@ namespace APro.Domain.Data.Configuration
             user.Property(u => u.FirstName).HasColumnName("first_name");
             user.Property(u => u.LastName).HasColumnName("last_name");
             user.Property(u => u.RoleID).HasColumnName("role_id");
+
+            user
+                .HasOne(u => u.Role)
+                .WithMany(r => r.Users)
+                .HasForeignKey(u => u.RoleID);
         }
     }
 }

@@ -20,7 +20,11 @@ namespace APro.WebAPI.Core.Controllers
             var users = _dbContext.Users.Select(u => new 
                 {
                     u.ID,
-                    u.RoleID,
+                    Role = new 
+                    {
+                        u.Role.ID,
+                        u.Role.Title
+                    },
                     u.FirstName,
                     u.LastName
                 }).ToList();
