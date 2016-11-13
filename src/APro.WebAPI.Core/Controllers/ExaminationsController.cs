@@ -24,7 +24,21 @@ namespace APro.WebAPI.Core.Controllers
                     e.AssignedToID,
                     e.CreatedByID,
                     e.Description,
-                    e.AssignmentDate
+                    e.AssignmentDate,
+                    ExaminationDetails = new 
+                    {
+                        e.ExaminationDetails.ID,
+                        e.ExaminationDetails.Status,
+                        UserAnswers = e.ExaminationDetails.UserAnswers
+                            .Select(ua => new 
+                            { 
+                                ua.TestQuestionID,
+                                ua.TestQuestion.Question.Description, 
+                                SelectedAnswers = ua.SelectedAnswers
+                                    .Select(sa => sa.SelectedAnswer.Description)
+                            } )
+                            
+                    }
                 }).ToList();
             
             return new ObjectResult(examinations);

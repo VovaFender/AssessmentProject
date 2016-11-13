@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace APro.Domain.Data.Models
 {
     public class TestQuestion
@@ -7,5 +9,6 @@ namespace APro.Domain.Data.Models
         public Question Question { get; set; }
         public int TestID { get; set; }
         public Test Test { get; set; }
+        public IList<QuestionUserAnswer> UserAnswers { get; set; }
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace APro.Domain.Data.Models
 {
     public class PossibleAnswer
@@ -11,5 +13,7 @@ namespace APro.Domain.Data.Models
         public int QuestionID { get; set; }
 
         public Question Question { get; set; }
+        
+        public IList<PossibleAnswerSelected> UsersChoices { get; set; }        
     }
 }

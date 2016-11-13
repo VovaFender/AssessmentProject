@@ -1,7 +1,6 @@
 using System.Linq;
 using APro.Domain.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace APro.WebAPI.Core.Controllers
 {
