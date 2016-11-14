@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using APro.Domain.Models.Enums;
+
 namespace APro.Domain.Models
 {
     public class ExaminationDetails

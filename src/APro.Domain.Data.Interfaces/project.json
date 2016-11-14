@@ -5,7 +5,7 @@
     "emitEntryPoint": false
   },
   "dependencies": {
-    "APro.Domain.Data.Models": "*"
+    "APro.Domain.Models": "*"    
   },
   "frameworks": {
     "netcoreapp1.0": {

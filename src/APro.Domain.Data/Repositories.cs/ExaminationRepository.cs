@@ -13,18 +13,18 @@ namespace APro.Domain.Data.Repositories
 
         public ExaminationRepository(AssessmentDataContext dbContext)
         {
-            _dbContext = dbContext;
+            _dbContext = dbContext;`
         }
 
-        public  Examination GetExamination(int examinationID)
+        public Examination GetExamination(int examinationID)
         {
             return _dbContext.Examinations
                 .FirstOrDefault(e => e.ID == examinationID);
         }
 
-        public IList<Examination> GetExaminationList()
+        public IEnumerable<Examination> GetExaminationList()
         {
-            return _dbContext.Examinations.Include(e => e.ExaminationDetails).ThenInclude(e) .ToList();
+            return _dbContext.Examinations;
         }
     }
 }

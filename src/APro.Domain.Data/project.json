@@ -7,7 +7,8 @@
   "dependencies": {
     //Project dependencies
     "APro.Domain.Data.Models":"*",
-    "APro.Domain.Data.Interfaces": "*",
+    "APro.Domain.Data.Interfaces": "*",    
+    "APro.Domain.Data": "*",
     //External references
     "Npgsql": "3.1.*",
     "Microsoft.EntityFrameworkCore": "1.0.0",

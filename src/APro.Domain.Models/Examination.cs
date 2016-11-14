@@ -1,3 +1,5 @@
+using System;
+
 namespace APro.Domain.Models
 {
     public class Examination
